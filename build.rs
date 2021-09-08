@@ -142,18 +142,18 @@ fn main() {
             .unwrap();
 
         println!("CLONE {:?}", out_dir);
-        let url = "https://github.com/gz/rumprun.git";
+        let url = "https://github.com/shpark/rumprun.git";
         Command::new("git")
             .args(&["clone", url, out_dir.as_str()])
             .status()
             .unwrap();
 
-        println!("CHECKOUT netbsd-8 {:?}", out_dir);
-        Command::new("git")
-            .args(&["checkout", "9669febf5c58ae4dd93819efcfdc16a4fc5e1671"])
-            .current_dir(&Path::new(&out_dir))
-            .status()
-            .unwrap();
+        // println!("CHECKOUT netbsd-8 {:?}", out_dir);
+        // Command::new("git")
+        //     .args(&["checkout", "9669febf5c58ae4dd93819efcfdc16a4fc5e1671"])
+        //     .current_dir(&Path::new(&out_dir))
+        //     .status()
+        //     .unwrap();
 
         println!("INIT SUBMODULES {:?}", out_dir);
         Command::new("git")
